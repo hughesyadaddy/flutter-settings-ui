@@ -1,12 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:settings_ui/src/abstract_section.dart';
 import 'package:settings_ui/src/cupertino_settings_section.dart';
-import 'package:settings_ui/src/settings_tile.dart';
 import 'package:settings_ui/src/extensions.dart';
+import 'package:settings_ui/src/settings_tile.dart';
 
 // ignore: must_be_immutable
 class SettingsSection extends AbstractSection {
@@ -57,13 +55,12 @@ class SettingsSection extends AbstractSection {
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: tiles.length,
-        separatorBuilder: (BuildContext context, int index) =>
-            Divider(height: 1),
+        separatorBuilder: (BuildContext context, int index) => Divider(),
         itemBuilder: (BuildContext context, int index) {
           return tiles[index];
         },
       ),
-      if (showBottomDivider) Divider(height: 1)
+      if (showBottomDivider) Divider()
     ]);
   }
 }

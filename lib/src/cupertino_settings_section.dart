@@ -22,7 +22,7 @@ class CupertinoSettingsSection extends StatelessWidget {
     if (header != null) {
       columnChildren.add(DefaultTextStyle(
         style: TextStyle(
-          color: CupertinoColors.inactiveGray,
+          color: CupertinoColors.systemGrey,
           fontSize: 13.5,
           letterSpacing: -0.5,
         ),
@@ -44,7 +44,6 @@ class CupertinoSettingsSection extends StatelessWidget {
       if (i < items.length - 1) {
         itemsWithDividers.add(items[i]);
         itemsWithDividers.add(Divider(
-          height: 0.3,
           indent: leftPadding,
         ));
       } else {
