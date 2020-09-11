@@ -52,26 +52,32 @@ class CupertinoSettingsSection extends StatelessWidget {
     }
 
     columnChildren.add(
-      Container(
-        decoration: BoxDecoration(
-          color: Theme.of(context).brightness == Brightness.light
-              ? CupertinoColors.white
-              : iosTileDarkColor,
-          border: Border(
-            top: const BorderSide(
-              color: borderColor,
-              width: 0.3,
+      Column(
+        children: [
+          Divider(),
+          Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).brightness == Brightness.light
+                  ? CupertinoColors.white
+                  : iosTileDarkColor,
+//              border: Border(
+//                top: const BorderSide(
+//                  color: borderColor,
+//                  width: 0.3,
+//                ),
+//                bottom: const BorderSide(
+//                  color: borderColor,
+//                  width: 0.3,
+//                ),
+//              ),
             ),
-            bottom: const BorderSide(
-              color: borderColor,
-              width: 0.3,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: itemsWithDividers,
             ),
           ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: itemsWithDividers,
-        ),
+          Divider(),
+        ],
       ),
     );
 
