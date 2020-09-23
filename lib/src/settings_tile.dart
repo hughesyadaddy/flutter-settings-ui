@@ -14,6 +14,7 @@ class SettingsTile extends StatelessWidget {
   final Widget leading;
   final Widget trailing;
   final bool dense;
+  final bool overrideColor;
   final VoidCallback onTap;
   final Function(bool value) onToggle;
   final bool switchValue;
@@ -31,6 +32,7 @@ class SettingsTile extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.dense,
+    this.overrideColor,
     this.titleTextStyle,
     this.subtitleTextStyle,
     this.enabled = true,
@@ -46,6 +48,7 @@ class SettingsTile extends StatelessWidget {
     this.subtitle,
     this.leading,
     this.dense,
+    this.overrideColor,
     this.enabled = true,
     this.trailing,
     @required this.onToggle,
@@ -76,6 +79,7 @@ class SettingsTile extends StatelessWidget {
         leading: leading,
         switchValue: switchValue,
         onToggle: onToggle,
+        overrideColor: overrideColor,
         labelTextStyle: titleTextStyle,
         switchActiveColor: switchActiveColor,
         subtitleTextStyle: subtitleTextStyle,
@@ -89,6 +93,7 @@ class SettingsTile extends StatelessWidget {
         value: subtitle,
         trailing: trailing,
         hasDetails: false,
+        overrideColor: overrideColor,
         leading: leading,
         onPress: onTap,
         labelTextStyle: titleTextStyle,

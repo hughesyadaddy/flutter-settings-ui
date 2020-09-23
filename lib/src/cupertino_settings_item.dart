@@ -20,6 +20,7 @@ class CupertinoSettingsItem extends StatefulWidget {
     this.value,
     this.hasDetails = false,
     this.enabled = true,
+    this.overrideColor = false,
     this.onPress,
     this.switchValue = false,
     this.onToggle,
@@ -38,6 +39,7 @@ class CupertinoSettingsItem extends StatefulWidget {
   final Widget value;
   final bool hasDetails;
   final bool enabled;
+  final bool overrideColor;
   final PressOperationCallback onPress;
   final bool switchValue;
   final Function(bool value) onToggle;
@@ -260,7 +262,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
         }
       },
       child: Container(
-        color: calculateBackgroundColor(context),
+        color: widget.overrideColor ? null : calculateBackgroundColor(context),
         height: widget.subtitle == null ? 44.0 : 57.0,
         child: Row(
           children: rowChildren,
