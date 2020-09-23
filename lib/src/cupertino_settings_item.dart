@@ -135,7 +135,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
         child: Padding(
           padding: widget.contentPadding != null
               ? const EdgeInsets.only(
-                  left: 7.0,
+                  left: 5.0,
                 )
               : const EdgeInsets.only(
                   left: 15.0,
