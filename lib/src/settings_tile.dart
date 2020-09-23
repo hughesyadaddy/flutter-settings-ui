@@ -15,6 +15,7 @@ class SettingsTile extends StatelessWidget {
   final Widget trailing;
   final bool dense;
   final bool overrideColor;
+  final Color backgroundOverridenColor;
   final VoidCallback onTap;
   final Function(bool value) onToggle;
   final bool switchValue;
@@ -33,6 +34,7 @@ class SettingsTile extends StatelessWidget {
     this.onTap,
     this.dense,
     this.overrideColor = false,
+    this.backgroundOverridenColor,
     this.titleTextStyle,
     this.subtitleTextStyle,
     this.enabled = true,
@@ -49,6 +51,7 @@ class SettingsTile extends StatelessWidget {
     this.leading,
     this.dense,
     this.overrideColor = false,
+    this.backgroundOverridenColor,
     this.enabled = true,
     this.trailing,
     @required this.onToggle,
@@ -80,6 +83,7 @@ class SettingsTile extends StatelessWidget {
         switchValue: switchValue,
         onToggle: onToggle,
         overrideColor: overrideColor,
+        backgroundOverridenColor: backgroundOverridenColor,
         labelTextStyle: titleTextStyle,
         switchActiveColor: switchActiveColor,
         subtitleTextStyle: subtitleTextStyle,
@@ -94,6 +98,7 @@ class SettingsTile extends StatelessWidget {
         trailing: trailing,
         hasDetails: false,
         overrideColor: overrideColor,
+        backgroundOverridenColor: backgroundOverridenColor,
         leading: leading,
         onPress: onTap,
         labelTextStyle: titleTextStyle,
@@ -105,30 +110,36 @@ class SettingsTile extends StatelessWidget {
 
   Widget androidTile() {
     if (_tileType == _SettingsTileType.switchTile) {
-      return SwitchListTile(
-        secondary: leading,
-        value: switchValue,
-        activeColor: switchActiveColor,
-        onChanged: enabled ? onToggle : null,
+      return Container(
+        color: overrideColor ? backgroundOverridenColor : null,
+        child: SwitchListTile(
+          secondary: leading,
+          value: switchValue,
+          activeColor: switchActiveColor,
+          onChanged: enabled ? onToggle : null,
 //        title: Text(title, style: titleTextStyle),
-        title: title,
+          title: title,
 //        subtitle:
 //            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
-        subtitle: subtitle != null ? subtitle : null,
-        dense: dense,
+          subtitle: subtitle != null ? subtitle : null,
+          dense: dense,
+        ),
       );
     } else {
-      return ListTile(
+      return Container(
+        color: overrideColor ? backgroundOverridenColor : null,
+        child: ListTile(
 //        title: Text(title, style: titleTextStyle),
-        title: title,
+          title: title,
 //        subtitle:
 //            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
-        subtitle: subtitle != null ? subtitle : null,
-        leading: leading,
-        enabled: enabled,
-        trailing: trailing,
-        onTap: onTap,
-        dense: dense,
+          subtitle: subtitle != null ? subtitle : null,
+          leading: leading,
+          enabled: enabled,
+          trailing: trailing,
+          onTap: onTap,
+          dense: dense,
+        ),
       );
     }
   }
