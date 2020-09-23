@@ -264,9 +264,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
         }
       },
       child: Container(
-        color: widget.overrideColor
-            ? widget.backgroundOverridenColor
-            : calculateBackgroundColor(context),
+        color: calculateBackgroundColor(context),
         height: widget.subtitle == null ? 44.0 : 57.0,
         child: Row(
           children: rowChildren,
@@ -282,11 +280,13 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
       } else {
         return Colors.white;
       }
-    } else {
+    } else if (Theme.of(context).brightness == Brightness.dark) {
       if (pressed) {
         return iosPressedTileColorDark;
       } else {
-        return iosTileDarkColor;
+        return widget.overrideColor
+            ? widget.backgroundOverridenColor
+            : iosTileDarkColor;
       }
     }
   }
