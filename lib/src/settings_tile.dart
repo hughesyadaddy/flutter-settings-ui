@@ -79,6 +79,7 @@ class SettingsTile extends StatelessWidget {
   Widget iosTile() {
     if (_tileType == _SettingsTileType.switchTile) {
       return CupertinoSettingsItem(
+        contentPadding: contentPadding,
         enabled: enabled,
         type: SettingsItemType.toggle,
         label: title,
@@ -94,6 +95,7 @@ class SettingsTile extends StatelessWidget {
       );
     } else {
       return CupertinoSettingsItem(
+        contentPadding: contentPadding,
         enabled: enabled,
         type: SettingsItemType.modal,
         label: title,
