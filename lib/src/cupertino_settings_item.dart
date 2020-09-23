@@ -183,21 +183,22 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
               child: widget.trailing,
             ),
           );
-        } else {
-          rightRowChildren.add(
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 0.5,
-                left: 2.25,
-              ),
-              child: Icon(
-                CupertinoIcons.forward,
-                color: mediumGrayColor,
-                size: 21.0,
-              ),
-            ),
-          );
         }
+//        else {
+//          rightRowChildren.add(
+//            Padding(
+//              padding: const EdgeInsets.only(
+//                top: 0.5,
+//                left: 2.25,
+//              ),
+//              child: Icon(
+//                CupertinoIcons.forward,
+//                color: mediumGrayColor,
+//                size: 21.0,
+//              ),
+//            ),
+//          );
+//        }
 
         rightRowChildren.add(Padding(
           padding: const EdgeInsets.only(right: 8.5),
