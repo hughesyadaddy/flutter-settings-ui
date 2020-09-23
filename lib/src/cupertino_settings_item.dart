@@ -278,7 +278,9 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
       if (pressed) {
         return iosPressedTileColorLight;
       } else {
-        return Colors.white;
+        return widget.overrideColor
+            ? widget.backgroundOverridenColor
+            : Colors.white;
       }
     } else if (Theme.of(context).brightness == Brightness.dark) {
       if (pressed) {
