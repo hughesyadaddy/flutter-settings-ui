@@ -30,12 +30,12 @@ class CupertinoSettingsItem extends StatefulWidget {
   })  : assert(label != null),
         assert(type != null);
 
-  final String label;
-  final String subtitle;
+  final Widget label;
+  final Widget subtitle;
   final Widget leading;
   final Widget trailing;
   final SettingsItemType type;
-  final String value;
+  final Widget value;
   final bool hasDetails;
   final bool enabled;
   final PressOperationCallback onPress;
@@ -93,29 +93,32 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
     if (widget.subtitle == null) {
       titleSection = Padding(
         padding: EdgeInsets.only(top: 1.5),
-        child: Text(widget.label,
-            overflow: TextOverflow.ellipsis,
-            style: widget.labelTextStyle ??
-                TextStyle(
-                  fontSize: 16,
-                  color: widget.enabled ? null : CupertinoColors.inactiveGray,
-                )),
+//        child: Text(widget.label,
+//            overflow: TextOverflow.ellipsis,
+//            style: widget.labelTextStyle ??
+//                TextStyle(
+//                  fontSize: 16,
+//                  color: widget.enabled ? null : CupertinoColors.inactiveGray,
+//                )),
+        child: widget.label,
       );
     } else {
       titleSection = Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           const Padding(padding: EdgeInsets.only(top: 8.5)),
-          Text(widget.label, style: widget.labelTextStyle),
+//          Text(widget.label, style: widget.labelTextStyle),
+          widget.label,
           const Padding(padding: EdgeInsets.only(top: 4.0)),
-          Text(
-            widget.subtitle,
-            style: widget.subtitleTextStyle ??
-                TextStyle(
-                  fontSize: 12.0,
-                  letterSpacing: -0.2,
-                ),
-          )
+//          Text(
+//            widget.subtitle,
+//            style: widget.subtitleTextStyle ??
+//                TextStyle(
+//                  fontSize: 12.0,
+//                  letterSpacing: -0.2,
+//                ),
+//          )
+          widget.subtitle
         ],
       );
     }
@@ -159,12 +162,13 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
                 top: 1.5,
                 right: 2.25,
               ),
-              child: Text(
-                widget.value,
-                style: widget.valueTextStyle ??
-                    TextStyle(
-                        color: CupertinoColors.inactiveGray, fontSize: 16),
-              ),
+//              child: Text(
+//                widget.value,
+//                style: widget.valueTextStyle ??
+//                    TextStyle(
+//                        color: CupertinoColors.inactiveGray, fontSize: 16),
+//              ),
+              child: widget.value,
             ),
           );
         }

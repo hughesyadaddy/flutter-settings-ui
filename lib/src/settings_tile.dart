@@ -9,8 +9,8 @@ import 'package:settings_ui/src/extensions.dart';
 enum _SettingsTileType { simple, switchTile }
 
 class SettingsTile extends StatelessWidget {
-  final String title;
-  final String subtitle;
+  final Widget title;
+  final Widget subtitle;
   final Widget leading;
   final Widget trailing;
   final VoidCallback onTap;
