@@ -22,6 +22,7 @@ class CupertinoSettingsItem extends StatefulWidget {
     this.enabled = true,
     this.overrideColor = false,
     this.backgroundOverridenColor,
+    this.contentPadding,
     this.onPress,
     this.switchValue = false,
     this.onToggle,
@@ -42,6 +43,7 @@ class CupertinoSettingsItem extends StatefulWidget {
   final bool enabled;
   final bool overrideColor;
   final Color backgroundOverridenColor;
+  final EdgeInsetsGeometry contentPadding;
   final PressOperationCallback onPress;
   final bool switchValue;
   final Function(bool value) onToggle;
@@ -84,10 +86,11 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
     if (leadingIcon != null) {
       rowChildren.add(
         Padding(
-          padding: const EdgeInsets.only(
-            left: 15.0,
-            bottom: 2.0,
-          ),
+          padding: widget.contentPadding ??
+              const EdgeInsets.only(
+                left: 15.0,
+                bottom: 2.0,
+              ),
           child: leadingIcon,
         ),
       );
