@@ -102,15 +102,19 @@ class SettingsTile extends StatelessWidget {
         value: switchValue,
         activeColor: switchActiveColor,
         onChanged: enabled ? onToggle : null,
-        title: Text(title, style: titleTextStyle),
-        subtitle:
-            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
+//        title: Text(title, style: titleTextStyle),
+        title: title,
+//        subtitle:
+//            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
+        subtitle: subtitle != null ? subtitle : null,
       );
     } else {
       return ListTile(
-        title: Text(title, style: titleTextStyle),
-        subtitle:
-            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
+//        title: Text(title, style: titleTextStyle),
+        title: title,
+//        subtitle:
+//            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
+        subtitle: subtitle != null ? subtitle : null,
         leading: leading,
         enabled: enabled,
         trailing: trailing,
