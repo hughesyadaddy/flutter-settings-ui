@@ -13,6 +13,7 @@ class SettingsTile extends StatelessWidget {
   final Widget subtitle;
   final Widget leading;
   final Widget trailing;
+  final bool dense;
   final VoidCallback onTap;
   final Function(bool value) onToggle;
   final bool switchValue;
@@ -29,6 +30,7 @@ class SettingsTile extends StatelessWidget {
     this.leading,
     this.trailing,
     this.onTap,
+    this.dense,
     this.titleTextStyle,
     this.subtitleTextStyle,
     this.enabled = true,
@@ -43,6 +45,7 @@ class SettingsTile extends StatelessWidget {
     @required this.title,
     this.subtitle,
     this.leading,
+    this.dense,
     this.enabled = true,
     this.trailing,
     @required this.onToggle,
@@ -107,6 +110,7 @@ class SettingsTile extends StatelessWidget {
 //        subtitle:
 //            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
         subtitle: subtitle != null ? subtitle : null,
+        dense: dense,
       );
     } else {
       return ListTile(
@@ -119,6 +123,7 @@ class SettingsTile extends StatelessWidget {
         enabled: enabled,
         trailing: trailing,
         onTap: onTap,
+        dense: dense,
       );
     }
   }
