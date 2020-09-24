@@ -25,7 +25,8 @@ class SettingsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).brightness == Brightness.light && Platform.isIOS
+      color: Theme.of(context).brightness == Brightness.light &&
+              Theme.of(context).platform == TargetPlatform.iOS
           ? CupertinoColors.systemGrey6
           : null,
       child: ListView.builder(
