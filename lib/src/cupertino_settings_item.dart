@@ -283,7 +283,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
   Color calculateBackgroundColor(BuildContext context) {
     if (Theme.of(context).brightness == Brightness.light) {
       if (pressed) {
-        return iosPressedTileColorLight;
+        return Theme.of(context).textTheme.button.color.withOpacity(0.16);
       } else {
         return widget.overrideColor
             ? widget.backgroundOverridenColor
@@ -291,7 +291,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
       }
     } else if (Theme.of(context).brightness == Brightness.dark) {
       if (pressed) {
-        return iosPressedTileColorDark;
+        return Theme.of(context).textTheme.button.color.withOpacity(0.16);
       } else {
         return widget.overrideColor
             ? widget.backgroundOverridenColor
