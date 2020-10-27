@@ -285,17 +285,13 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
       if (pressed) {
         return Theme.of(context).textTheme.button.color.withOpacity(0.16);
       } else {
-        return widget.overrideColor
-            ? widget.backgroundOverridenColor
-            : Colors.white;
+        return widget.overrideColor ? Colors.transparent : Colors.white;
       }
     } else if (Theme.of(context).brightness == Brightness.dark) {
       if (pressed) {
         return Theme.of(context).textTheme.button.color.withOpacity(0.16);
       } else {
-        return widget.overrideColor
-            ? widget.backgroundOverridenColor
-            : iosTileDarkColor;
+        return widget.overrideColor ? Colors.transparent : iosTileDarkColor;
       }
     }
   }
