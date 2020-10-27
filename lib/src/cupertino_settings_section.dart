@@ -57,9 +57,10 @@ class CupertinoSettingsSection extends StatelessWidget {
           Divider(),
           Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).brightness == Brightness.light
-                  ? CupertinoColors.white
-                  : iosTileDarkColor,
+              color: Theme.of(context).unselectedWidgetColor,
+              // color: Theme.of(context).brightness == Brightness.light
+              //     ? CupertinoColors.white
+              //     : iosTileDarkColor,
 //              border: Border(
 //                top: const BorderSide(
 //                  color: borderColor,
