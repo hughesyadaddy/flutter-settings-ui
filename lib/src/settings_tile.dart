@@ -14,7 +14,6 @@ class SettingsTile extends StatelessWidget {
   final Widget leading;
   final Widget trailing;
   final bool dense;
-  final bool overrideColor;
   final Color backgroundOverridenColor;
   final EdgeInsetsGeometry contentPadding;
   final VoidCallback onTap;
@@ -34,7 +33,6 @@ class SettingsTile extends StatelessWidget {
     this.trailing,
     this.onTap,
     this.dense,
-    this.overrideColor = false,
     this.backgroundOverridenColor,
     this.contentPadding,
     this.titleTextStyle,
@@ -52,7 +50,6 @@ class SettingsTile extends StatelessWidget {
     this.subtitle,
     this.leading,
     this.dense,
-    this.overrideColor = false,
     this.backgroundOverridenColor,
     this.contentPadding,
     this.enabled = true,
@@ -86,7 +83,6 @@ class SettingsTile extends StatelessWidget {
         leading: leading,
         switchValue: switchValue,
         onToggle: onToggle,
-        overrideColor: overrideColor,
         backgroundOverridenColor: backgroundOverridenColor,
         labelTextStyle: titleTextStyle,
         switchActiveColor: switchActiveColor,
@@ -102,7 +98,6 @@ class SettingsTile extends StatelessWidget {
         value: subtitle,
         trailing: trailing,
         hasDetails: false,
-        overrideColor: overrideColor,
         backgroundOverridenColor: backgroundOverridenColor,
         leading: leading,
         onPress: onTap,
@@ -116,7 +111,7 @@ class SettingsTile extends StatelessWidget {
   Widget androidTile() {
     if (_tileType == _SettingsTileType.switchTile) {
       return Container(
-        color: overrideColor ? backgroundOverridenColor : null,
+        color: backgroundOverridenColor ?? null,
         child: SwitchListTile(
           contentPadding: contentPadding,
           secondary: leading,
@@ -133,7 +128,7 @@ class SettingsTile extends StatelessWidget {
       );
     } else {
       return Container(
-        color: overrideColor ? backgroundOverridenColor : null,
+        color: backgroundOverridenColor ?? null,
         child: ListTile(
           contentPadding: contentPadding,
 //        title: Text(title, style: titleTextStyle),

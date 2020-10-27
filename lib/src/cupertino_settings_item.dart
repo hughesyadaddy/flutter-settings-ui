@@ -20,7 +20,6 @@ class CupertinoSettingsItem extends StatefulWidget {
     this.value,
     this.hasDetails = false,
     this.enabled = true,
-    this.overrideColor = false,
     this.backgroundOverridenColor,
     this.contentPadding,
     this.onPress,
@@ -41,7 +40,6 @@ class CupertinoSettingsItem extends StatefulWidget {
   final Widget value;
   final bool hasDetails;
   final bool enabled;
-  final bool overrideColor;
   final Color backgroundOverridenColor;
   final EdgeInsetsGeometry contentPadding;
   final PressOperationCallback onPress;
@@ -285,13 +283,13 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
       if (pressed) {
         return Theme.of(context).textTheme.button.color.withOpacity(0.16);
       } else {
-        return widget.overrideColor ? Colors.transparent : Colors.white;
+        return widget.backgroundOverridenColor ?? Colors.transparent;
       }
     } else if (Theme.of(context).brightness == Brightness.dark) {
       if (pressed) {
         return Theme.of(context).textTheme.button.color.withOpacity(0.16);
       } else {
-        return widget.overrideColor ? Colors.transparent : iosTileDarkColor;
+        return widget.backgroundOverridenColor ?? Colors.transparent;
       }
     }
   }
